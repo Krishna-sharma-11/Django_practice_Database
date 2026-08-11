@@ -3,7 +3,16 @@
 
 <ul>
   {%for book in books%}
-  <li>(Title:{{book.title}}) (Rating: {{book.rating}})</li>
+  <li>
+    <a href="{{book.get_absolute_url}}">{{book.title}}</a>(Rating:
+    {{book.rating}})
+  </li>
   {%endfor%}
 </ul>
+
+<hr />
+<p>Total Number Of Books: {{total_number_of_books}}</p>
+<p>Average Rating: {{average_rating.rating__avg}}</p>
+<p>Minimum Rating: {{minimum_rating.rating__min}}</p>
+
 {%endblock%}
